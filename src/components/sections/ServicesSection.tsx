@@ -79,9 +79,7 @@ const ServicesSection: React.FC = () => {
               description={service.description}
               color={service.color}
               imageSrc={service.src}
-              alt={service.alt}
-              icon={<div className="w-20 h-20 bg-gray-200 rounded-lg"></div>}
-            />
+              alt={service.alt}            />
           </div>
         ))}
       </div>

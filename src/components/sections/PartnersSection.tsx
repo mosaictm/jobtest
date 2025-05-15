@@ -17,7 +17,7 @@ interface SmallPartnerData {
 }
 
 // Big Partner Card component
-const BigPartnerCard: React.FC<BigPartnerData> = ({ name, logo, description, imagePath }) => (
+const BigPartnerCard: React.FC<BigPartnerData> = ({ name, description, imagePath }) => (
   <div className="bg-white rounded-lg border-2 border-gray-300 overflow-hidden transition-all duration-300 hover:shadow-xl">
     <div className="grid grid-cols-2 grid-rows-8 gap-4 h-full pt-10">
       {/* 1: Image (rows 1-4) */}

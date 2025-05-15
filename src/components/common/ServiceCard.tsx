@@ -7,12 +7,11 @@ interface ServiceCardProps {
   title: string;
   description: string;
   color: string;
-  icon: React.ReactNode;
   imageSrc: string;
   alt: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, color, icon, imageSrc, alt }) => (
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, color, imageSrc, alt }) => (
   <div className="relative w-full max-w-[384px]">
     {/* Colorful top banner with radius */}
     <div className={`h-6 w-full ${color || 'bg-[#2B1F51]'} rounded-t-lg`}></div>

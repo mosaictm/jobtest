@@ -1,16 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import BigServiceCard from '../common/BigServiceCard';
-
-// Define interfaces for props and data (keeping for reference but no longer used)
-interface ServiceCardData {
-  title: string;
-  description: string;
-  icon: string;
-  color: string;
-}
 
 // Categories data
 const CATEGORIES = [

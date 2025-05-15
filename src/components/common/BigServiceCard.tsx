@@ -4,7 +4,6 @@ import React from 'react';
 interface BigServiceCardProps {
   title: string;
   description: string;
-  learnMoreText?: string;
   imageSrc: string;
   imageAlt: string;
 }
@@ -12,7 +11,6 @@ interface BigServiceCardProps {
 const BigServiceCard: React.FC<BigServiceCardProps> = ({
   title,
   description,
-  learnMoreText = "اكتشف المزيد ←",
   imageSrc,
   imageAlt,
 }) => {
