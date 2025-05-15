@@ -197,7 +197,7 @@ const SERVICES_DATA: ServiceCardProps[] = [
 
 const TestimonialsSection: React.FC = () => {
   return (
-    <div className="w-full bg-gray-50 py-4 md:py-8">
+    <div className="w-full bg-gray-50 py-4 md:py-8 mb-40  ">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-4 animate-fadeIn">

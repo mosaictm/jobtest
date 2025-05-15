@@ -44,7 +44,7 @@ const HeroSection: React.FC = () => {
   const rightPlatforms: PlatformData[] = [
     {
       position: "bottom-0 right-0",
-      platform: "/images/hero/platform.png",
+      platform: "/images/hero/plat.png",
       image: "/images/hero/shield.png",
       imageAlt: "Shield",
       delay: "0.05s",
@@ -75,7 +75,7 @@ const HeroSection: React.FC = () => {
   const leftPlatforms: PlatformData[] = [
     {
       position: "bottom-0 right-0",
-      platform: "/images/hero/platform.png",
+      platform: "/images/hero/plat.png",
       image: "/images/hero/server.png",
       imageAlt: "Server",
       delay: "0.1s",

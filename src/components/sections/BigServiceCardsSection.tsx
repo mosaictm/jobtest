@@ -35,32 +35,32 @@ const SERVICES_DATA = [
   {
     title: "استضافة المواقع",
     description: "استضافة مواقع الويب بأحدث التقنيات وبأسعار تنافسية مع دعم فني متميز على مدار الساعة.",
-    imagePath: "/images/bigservices/hosting.jpg"
+    imagePath: "/images/bigservices/server.png"
   },
   {
     title: "الخوادم المخصصة",
     description: "خوادم مخصصة بأداء عالي وإمكانيات متطورة لتلبية احتياجات الأعمال الكبيرة والمتوسطة.",
-    imagePath: "/images/bigservices/server.jpg"
+    imagePath: "/images/bigservices/server.png"
   },
   {
     title: "تطوير المواقع",
     description: "تصميم وتطوير مواقع الويب بأحدث التقنيات والمعايير العالمية مع تجربة مستخدم متميزة.",
-    imagePath: "/images/bigservices/webdev.jpg"
+    imagePath: "/images/bigservices/cloud.png"
   },
   {
     title: "الاستضافة السحابية",
     description: "خدمات سحابية متكاملة بمرونة عالية وقابلية للتوسع لتناسب مختلف احتياجات الأعمال.",
-    imagePath: "/images/bigservices/cloud.jpg"
+    imagePath: "/images/bigservices/cloud.png"
   },
   {
     title: "حلول البريد الإلكتروني",
     description: "بريد إلكتروني احترافي للشركات مع حماية متقدمة من البريد المزعج والفيروسات.",
-    imagePath: "/images/bigservices/mail.jpg"
+    imagePath: "/images/bigservices/mail.png"
   },
   {
     title: "اسماء النطاقات",
     description: "تسجيل وإدارة اسماء النطاقات مع مجموعة واسعة من الامتدادات ونظام إدارة سهل الاستخدام.",
-    imagePath: "/images/bigservices/domain.jpg"
+    imagePath: "/images/bigservices/server.png"
   }
 ];
 
