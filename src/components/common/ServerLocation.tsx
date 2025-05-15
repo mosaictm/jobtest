@@ -33,34 +33,58 @@ const ServerLocation: React.FC<ServerLocationProps> = ({ name, flag, ping }) => 
     <style jsx>{`
       .parent {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
         gap: 8px;
         border-radius: 8px;
         background-color: #f8f9fa;
-        min-height: 120px;
+        padding: 12px;
       }
       
       .div1 {
-        grid-row: span 4 / span 4;
-        grid-column-start: 2;
         display: flex;
         align-items: center;
         justify-content: center;
       }
       
       .div2 {
-        grid-row-start: 2;
         display: flex;
         align-items: center;
+        justify-content: center;
         font-weight: 500;
+        margin-top: 8px;
       }
       
       .div3 {
-        grid-row-start: 3;
         display: flex;
         align-items: center;
+        justify-content: center;
         font-size: 0.875rem;
+      }
+      
+      @media (min-width: 768px) {
+        .parent {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(4, 1fr);
+          min-height: 120px;
+          padding: 0;
+        }
+        
+        .div1 {
+          grid-row: span 4 / span 4;
+          grid-column-start: 2;
+        }
+        
+        .div2 {
+          grid-row-start: 2;
+          justify-content: flex-start;
+          margin-top: 0;
+        }
+        
+        .div3 {
+          grid-row-start: 3;
+          justify-content: flex-start;
+        }
       }
     `}</style>
   </div>

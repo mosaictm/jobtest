@@ -31,12 +31,12 @@ const MIDDLE_LOCATIONS: ServerLocationData[] = [
 
 const ServerLocationsSection: React.FC = () => {
   return (
-    <div className="w-full py-16 mt-16">
+    <div className="w-full py-10 md:py-16 mt-8 md:mt-16">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold mb-12">مواقع السيرفرات</h2>          
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 md:mb-12">مواقع السيرفرات</h2>          
           {/* Map image at the top */}
-          <div className="flex justify-center mb-16">
+          <div className="flex justify-center mb-8 md:mb-16">
             <Image 
               src="/images/map/world-map.svg"
               alt="Server Locations Map"
@@ -48,8 +48,8 @@ const ServerLocationsSection: React.FC = () => {
         </div>
         
         {/* Server locations grid */}
-        <div className="grid grid-cols-4 gap-4 max-w-5xl mx-auto">
-          {/* First two rows */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          {/* Main server locations */}
           {SERVER_LOCATIONS.map((location, index) => (
             <ServerLocation 
               key={index}
@@ -58,9 +58,11 @@ const ServerLocationsSection: React.FC = () => {
               ping={location.ping}
             />
           ))}
-          
-          {/* Row 3 with last 2 countries in the middle */}
-          <div className="col-span-1"></div> {/* Empty column */}
+        </div>
+        
+        {/* Middle locations in separate row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mt-4">
+          <div className="hidden md:block"></div> {/* Empty column - hidden on mobile */}
           {MIDDLE_LOCATIONS.map((location, index) => (
             <ServerLocation 
               key={index}
@@ -69,7 +71,7 @@ const ServerLocationsSection: React.FC = () => {
               ping={location.ping}
             />
           ))}
-          <div className="col-span-1"></div> {/* Empty column */}
+          <div className="hidden md:block"></div> {/* Empty column - hidden on mobile */}
         </div>
       </div>
     </div>
