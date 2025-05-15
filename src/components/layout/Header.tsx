@@ -208,7 +208,7 @@ const Header: React.FC = () => {
       </div>
       
       {/* Main NavBar - NOT sticky, but maintains its position below the top navbar */}
-      <header className="bg-[#092346] w-full relative mt-[70px] sm:mt-[80px]">
+      <header className="bg-[#092346] w-full relative mt-[60px] sm:mt-[70px]">
         <NavBar className="border-none py-4 sm:py-6">
           <div className="flex items-center bg-transparent">
             <div className="h-12 sm:h-16">
@@ -257,22 +257,20 @@ const Header: React.FC = () => {
           </nav>
         </NavBar>
         
-        {/* Mobile menu dropdown - with smooth animation */}
-        <div 
-          className={`sm:hidden bg-[#0d2d5a] text-white overflow-hidden transition-all duration-300 ease-in-out ${
-            mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-          }`}
-        >
-          <div className="flex flex-col py-2">
+        {/* Mobile menu dropdown */}
+        {mobileMenuOpen && (
+          <div className="sm:hidden bg-[#0a2a56] text-white w-full z-50 absolute left-0">
             {MAIN_NAV_ITEMS.map((item) => (
-              <div className="py-3 px-6 border-b border-blue-800 last:border-b-0" key={item.id}>
-                <NavItem main={'text-white font-thin'}>
-                  {item.label}
-                </NavItem>
-              </div>
+              <a 
+                href="#" 
+                key={item.id} 
+                className="block py-3 px-6 last:border-b-0 hover:bg-[#0a203f]"
+              >
+                <span className="text-white text-base">{item.label}</span>
+              </a>
             ))}
           </div>
-        </div>
+        )}
       </header>
     </>
   );
