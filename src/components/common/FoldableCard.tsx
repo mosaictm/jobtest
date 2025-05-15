@@ -24,11 +24,13 @@ const FoldableCard: React.FC<FoldableCardProps> = ({ title, description }) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </div>
-      {isOpen && (
-        <div className="mt-3 text-sm text-gray-600 border-t pt-3">
+      <div 
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-40 mt-3' : 'max-h-0'}`}
+      >
+        <div className="text-sm text-gray-600">
           {description}
         </div>
-      )}
+      </div>
     </div>
   );
 };

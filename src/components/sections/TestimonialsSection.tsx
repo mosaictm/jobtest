@@ -175,33 +175,33 @@ const TESTIMONIALS_DATA: TestimonialData[] = [
   }
 ];
 
-// Service data
+// Service data with updated image paths
 const SERVICES_DATA: ServiceCardProps[] = [
   {
     title: "وظائف",
-    imagePath: "/images/bigservices/server.png" // Placeholder, replace with actual image
+    imagePath: "/images/testo/jobs.png"
   },
   {
     title: "مركز المساعدة",
-    imagePath: "/images/bigservices/cloud.png" // Placeholder, replace with actual image
+    imagePath: "/images/testo/help.png"
   },
   {
     title: "حالة المخدّم",
-    imagePath: "/images/bigservices/mail.png" // Placeholder, replace with actual image
+    imagePath: "/images/testo/server.png"
   },
   {
     title: "خدمات المشتركين",
-    imagePath: "/images/bigservices/server.png" // Placeholder, replace with actual image
+    imagePath: "/images/testo/subs.png"
   }
 ];
 
 const TestimonialsSection: React.FC = () => {
   return (
-    <div className="w-full bg-gray-50 py-4 md:py-8 mb-40  ">
+    <div className="w-full py-4 md:py-8 mb-40  ">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-4 animate-fadeIn">
-          <h2 className="text-2xl md:text-3xl font-bold">آراء العملاء</h2>
+          <h2 className="text-5xl font-bold">آراء العملاء</h2>
         </div>
 
         {/* Grid Layout */}

@@ -41,8 +41,8 @@ const UPPER_NAV_LEFT: NavItemData[] = [
 ];
 
 const UPPER_NAV_RIGHT: NavItemData[] = [
+  { id: 5, label: '+880181239633', icon: '/icons/phone.svg', iconAlt: 'Phone icon' },
   { id: 4, label: 'info@doorsoft.com', icon: '/icons/email.svg', iconAlt: 'Email icon' },
-  { id: 5, label: '+880181239633', icon: '/icons/phone.svg', iconAlt: 'Phone icon' }
 ];
 
 // Main navigation items data

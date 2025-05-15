@@ -31,18 +31,18 @@ const MIDDLE_LOCATIONS: ServerLocationData[] = [
 
 const ServerLocationsSection: React.FC = () => {
   return (
-    <div className="w-full bg-white py-16 mt-16">
+    <div className="w-full py-16 mt-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-12">مواقع الخوادم</h2>          
+          <h2 className="text-5xl font-bold mb-12">مواقع السيرفرات</h2>          
           {/* Map image at the top */}
           <div className="flex justify-center mb-16">
             <Image 
               src="/images/map/world-map.svg"
               alt="Server Locations Map"
-              width={800}
-              height={120}
-              className="w-full max-w-4xl"
+              width={1800}
+              height={900}
+              className="w-full max-w-6xl"
             />
           </div>
         </div>

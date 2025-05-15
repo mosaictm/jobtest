@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import BigServiceCard from '../common/BigServiceCard';
 
@@ -98,18 +98,47 @@ const BIG_SERVICE_DATA = [
 const BigServicesSection: React.FC = () => {
   // State to track active category
   const [activeCategory, setActiveCategory] = useState(0);
+  // State for animation
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [displayedCategory, setDisplayedCategory] = useState(0);
+  // State to track animation direction
+  const [slideDirection, setSlideDirection] = useState('right');
+
+  // Handle category change with animation
+  const handleCategoryChange = (index: number) => {
+    if (index === activeCategory) return;
+    
+    // Determine slide direction
+    setSlideDirection(index > activeCategory ? 'right' : 'left');
+    setIsAnimating(true);
+    setActiveCategory(index);
+    
+    // After a shorter delay to allow exit animation, update displayed category
+    setTimeout(() => {
+      setDisplayedCategory(index);
+      // Allow cards to animate in
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 30);
+    }, 200);
+  };
+
+  // Initialize displayed category on first render
+  useEffect(() => {
+    setDisplayedCategory(activeCategory);
+  }, []);
 
   return (
-    <div className="w-full bg-gray-50 py-16">
+    <div className="w-full py-8 mb-0">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">خدمات كبيرة تلبي احتياجات عملك</h2>
+        <div className="text-center mb-10">
+          <h2 className="text-5xl font-bold mb-4">خدمات كبيرة تلبي احتياجات عملك</h2>
           <p className="text-xl text-gray-600">من خلال منتجاتنا وخدماتنا السحابية، ستجد بأننا نلبي 100٪ من احتياجات عملك والبيانات، مع أمان فائق للبنية التحتية الخاصة بك.</p>
         </div>
 
         {/* Category Navigation */}
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-10">
           <div className="bg-gray-100 rounded-xl shadow-md p-1 flex">
             {CATEGORIES.map((category, index) => (
               <button
@@ -119,7 +148,7 @@ const BigServicesSection: React.FC = () => {
                     ? 'bg-white text-black'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
-                onClick={() => setActiveCategory(index)}
+                onClick={() => handleCategoryChange(index)}
                 type="button"
                 aria-pressed={activeCategory === index}
               >
@@ -129,18 +158,32 @@ const BigServicesSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {BIG_SERVICE_DATA[activeCategory].map((service) => (
-            <BigServiceCard
-              key={service.id}
-              title={service.title}
-              description={service.description}
-              imageSrc={service.imageSrc}
-              imageAlt={service.imageAlt}
-            />
-          ))}
-          
+        {/* Cards Grid with Animation - Changed from absolute to relative positioning */}
+        <div className="pb-4">
+          <div 
+            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-200 ease-in-out ${
+              isAnimating 
+                ? `opacity-0 transform ${slideDirection === 'right' ? 'translate-x-20' : '-translate-x-20'}`
+                : 'opacity-100 translate-x-0'
+            }`}
+          >
+            {BIG_SERVICE_DATA[displayedCategory].map((service, index) => (
+              <div 
+                key={service.id}
+                className="transform transition-all duration-200 ease-in-out"
+                style={{ 
+                  transitionDelay: isAnimating ? '0s' : `${index * 0.05}s`
+                }}
+              >
+                <BigServiceCard
+                  title={service.title}
+                  description={service.description}
+                  imageSrc={service.imageSrc}
+                  imageAlt={service.imageAlt}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
